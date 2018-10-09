@@ -66,7 +66,8 @@ const Store = new Vuex.Store({
       })
     },
     save (context, params) {
-      context.state.addsList.push({id: context.state.addsList.length + 1, name: params.item.name, price: params.item.price, description: params.item.description});
+      context.state.addsList.push({
+        id: context.state.addsList.length + 1, name: params.item.name, price: params.item.price, description: params.item.description})
       context.state.addsList.forEach(item => {
         if (item.id === params.item.id) {
           item.name = params.item.name
